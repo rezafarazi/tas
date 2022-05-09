@@ -1,0 +1,61 @@
+package com.sorapp.tas
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.view.View
+import android.widget.ImageView
+import kotlin.random.Random
+
+class one_tas_activity : AppCompatActivity()
+{
+
+    lateinit var tas1:ImageView;
+
+    override fun onCreate(savedInstanceState: Bundle?)
+    {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_one_tas)
+
+        tas1=findViewById(R.id.imageView);
+    }
+
+    fun OnClick_Go(v: View)
+    {
+        Tas(tas1)
+    }
+
+    fun Tas(img: ImageView)
+    {
+        var loop= Random.nextInt(1, 15)
+        for(i in 0..loop)
+        {
+            var rnd = Random.nextInt(1, 6)
+            if(rnd==1)
+            {
+                img.setImageResource(R.drawable.one)
+            }
+            else if(rnd==2)
+            {
+                img.setImageResource(R.drawable.two)
+            }
+            else if(rnd==3)
+            {
+                img.setImageResource(R.drawable.three)
+            }
+            else if(rnd==4)
+            {
+                img.setImageResource(R.drawable.fore)
+            }
+            else if(rnd==5)
+            {
+                img.setImageResource(R.drawable.five)
+            }
+            else if(rnd==6)
+            {
+                img.setImageResource(R.drawable.six)
+            }
+            Thread.sleep(10)
+        }
+    }
+
+}
